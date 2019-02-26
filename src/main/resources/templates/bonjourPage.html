@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{css/bbonjour.css}"/>
+</head>
+<body>
+<h1>Bonjour page</h1>
+<p th:text="${nom}"></p>
+<p th:text="${cle}"></p>
+<p th:text="${b}"></p>
+<h2>Le conditions</h2>
+<p th:if="${b == false}">Le boolean renvoie false </p>
+<p th:if="${cle != 100}">le nombre est différent de 100</p>
+<p th:if="${cle gt 100}">Le nombre est plus grand que 100</p>
+<p th:if="${cle lt 100}">Le nombre est plus petit que 100</p>
+
+<p th:if="${cle le 100}">Le nombre est plus petit ou égal à 100</p>
+<p th:if="${cle ge 100}">Le nombre est plus grand ou égal à 100</p>
+
+<p th:if="${cle gt 100}">La variable nombre est sup à 100</p>
+<p th:unless="${cle ge 100}">La variable nombre est inf à 100</p>
+
+<p th:switch="${cle}">
+<p th:case="55">55</p>
+<p th:case="55">99</p>
+<p th:case="55">45</p>
+<p th:case="55">10455</p>
+<p th:case="55">7956255</p>
+<p th:case="*">??</p>
+
+</p>
+
+<script type="text/javascript" th:src="@{js/bonjour.js}"></script>
+</body>
+</html>
