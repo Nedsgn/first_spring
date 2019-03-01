@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
-<title>Insert title here</title>
-<link rel="stylesheet" th:href="@{css/utilisateurs.css}"/>
+<meta
+	charset="UTF-8"
+/>
+<title>Insert
+	title here</title>
+<link
+	rel="stylesheet"
+	th:href="@{css/utilisateurs.css}"
+/>
 </head>
 <body>
-<h1>Les utilisateurs</h1>
+	<h1>Les
+		utilisateurs</h1>
+
+	<div
+		th:each="user : ${listeDesUtilisateurs}"
+	>
+		<!-- variable qui a été transmise depuis le controller, le each va afficher plusieurs fois -->
+		<div
+			th:if="${user.age lt 50}"
+		>
+		<p>
+			<span
+				th:text="${user.nom}"
+			></span> <span
+				th:text="${user.prenom}"
+			></span>
+			<span
+				th:text="${user.age}"
+			></span>
+		</p>
+
+
+		
+</div>
+
+	</div>
+	
+	
+		
 </body>
 </html>
